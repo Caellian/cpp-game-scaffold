@@ -1,0 +1,21 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,5 +1,4 @@
+-cmake_minimum_required(VERSION 2.8)
+-project(OIS)
++cmake_minimum_required(VERSION 3.5)
+ 
+ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/CmakeModules)
+ 
+@@ -17,6 +16,11 @@ set(OIS_VERSION ${OIS_MAJOR_VERSION}.${OIS_MINOR_VERSION}.${OIS_PATCH_VERSION})
+ set(OIS_COMPATIBILITY_VERSION ${OIS_MAJOR_VERSION}.${OIS_MINOR_VERSION}.0)
+ set(OIS_SOVERSION ${OIS_MAJOR_VERSION}.${OIS_MINOR_VERSION}.0)
+ 
++project(
++  OIS
++  VERSION ${OIS_VERSION}
++  LANGUAGES CXX)
++
+ set(OIS_LIBRARY_NAME OIS)
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/includes/OISPrereqs.h.in ${CMAKE_CURRENT_SOURCE_DIR}/includes/OISPrereqs.h @ONLY)
